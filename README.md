@@ -1,2 +1,2 @@
 # zustand-firestore
-Simple app which stores stat locally using Zustand and does syncing with Firestore. 
+Simple app which stores its state locally using Zustand and does syncing with Firestore. 
