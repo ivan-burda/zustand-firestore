@@ -1,5 +1,5 @@
 import {create} from "zustand";
-import { deleteDoc, doc, setDoc } from 'firebase/firestore';
+import {collection, deleteDoc, doc, onSnapshot, setDoc} from 'firebase/firestore';
 import {produce} from "immer";
 import { v4 as uuidv4 } from 'uuid';
 import { db } from '../firestore/firestore.ts';
@@ -16,6 +16,23 @@ interface FruitsState{
 }
 
 const DELIBERATE_DELAY = 100;
+
+export const subscribeToUpdates = (callback: (newData:Fruit[])=>void) => {
+    const unsubscribe = onSnapshot(collection(db, 'fruits'), (snapshot) => {
+        const updatedData = snapshot.docs.map((doc) => {
+            console.log(doc.data());
+            return ({
+                id: doc.id,
+                ...doc.data(),
+            });
+        }) as Fruit[];
+        callback(updatedData);
+    });
+
+    return () => {
+        unsubscribe();
+    };
+}
 
 const handleAddFruit = async(fruit:Fruit)=>{
     try{
