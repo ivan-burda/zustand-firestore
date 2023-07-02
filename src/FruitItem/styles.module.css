@@ -1,0 +1,14 @@
+.fruit{
+    padding: 0.5rem;
+    margin: 5px;
+    background-color: lightblue;
+    border-radius: 10px;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emoji{
+    font-size: 2rem;
+}

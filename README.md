@@ -1,2 +1,5 @@
-# zustand-firestore
-Simple app which stores its state locally using Zustand and does syncing with Firestore. 
+# zustand-experiments
+Try Vite as an alternative to create-react-app
+Use zustant to maintain local state of the app
+Bind zustand to Firestore via websockets to sync local changes to the db
+
