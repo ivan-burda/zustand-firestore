@@ -1,14 +1,22 @@
 .fruit{
     padding: 0.5rem;
     margin: 5px;
-    background-color: lightblue;
+    background-color: lightcoral;
     border-radius: 10px;
-    width: 100px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
+.fruit button{
+    margin-right: 30px;
+    font-weight: bold;
+}
+
 .emoji{
+    background-color: mediumvioletred;
+    border-radius: 5px;
+    padding: 2px 5px;
     font-size: 2rem;
 }

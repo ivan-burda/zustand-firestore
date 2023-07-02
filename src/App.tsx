@@ -23,14 +23,23 @@ const handleDataUpdate = (updatedData: Fruit[]) =>{
     }, []);
 
         return (
-        <>
-            <ul>
-                {fruits.map(fruit=><FruitItem key={fruit.id} name={fruit.name} id={fruit.id}/>)}
-            </ul>
-            <AddButton name="banana" color="gold"/>
-            <AddButton name="melon" color="tomato"/>
-            <AddButton name="grapes" color="lavender"/>
-        </>
+        <div className="container">
+            <header className="header">Fruits On Demand</header>
+
+            <main className="flex">
+               <div className="column-main tile"> <ul>
+                   {fruits.map(fruit=><FruitItem key={fruit.id} name={fruit.name} id={fruit.id}/>)}
+               </ul>
+
+               </div>
+                <div className="column-sidebar">
+                    <AddButton name="banana" color="gold"/>
+                    <AddButton name="melon" color="tomato"/>
+                    <AddButton name="grapes" color="lavender"/>
+                </div>
+            </main>
+        </div>
+
     );
 };
 

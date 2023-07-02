@@ -1,4 +1,6 @@
 .addButton{
     padding: 1em 0.5em;
     margin: 1em 0.5em;
+    width: 100%;
+    font-weight: bold;
 }
